@@ -1,0 +1,31 @@
+module.exports = {
+     homePageHeader : e => mob.$('~Recent Cases'),
+     homeIcon : e => mob.$('~Home home'),
+     caseList : e => mob.$$('-ios predicate string:type == "XCUIElementTypeStaticText" AND value == "Case Mobile Test"'),
+     burgerIcon : e => mob.$('~menu'),
+    //  burgerIcon() {return $('-ios predicate string:type == "XCUIElementTypeButton" AND name contains \"menu\"')}
+     okButton : e => mob.$('~OK'),
+     logOutIcon : e => mob.$('//XCUIElementTypeButton[@name="Logout exit"]'),
+     addCaseLink : e => mob.$('~Add Case add'),
+     addCaseTranslation : e => mob.$('~CASES.ADD.MODAL_HEADING add'),
+     newCaseHeader : e => mob.$('//*[contains(text(),"New Case")]'),
+     loadingWindow : e => mob.$("//div[@class='loading-wrapper']//div[text()='Please wait...']"),
+     burgerMenu : e => mob.$('//*[@name="menu"]'),
+     homeLink : e => mob.$('.input-wrapper'),
+     addItemLink : e => mob.$('~Add Item add'),
+     newItemHeader : e => mob.$('~New Item'),
+     addPersonLink : e => mob.$('-ios predicate string:type == "XCUIElementTypeButton" AND name == "Add Person add"'),
+     addNewPersonHeader : e => mob.$("//*[contains(text(),'Add Person')]"),
+     barcodeSCannerLink : e => mob.$('-ios predicate string:type == "XCUIElementTypeButton" AND name == "Barcode Scanner qr scanner"'),
+     scannerPageHeader : e => mob.$("//div[text()='Barcode Scanner']"),
+     searchLink : e => mob.$('~Search Case search'),
+     searchPageHeader : e => mob.$('~Search Parameters'),
+     backarrow : e => mob.$('~arrow back Back'),
+     discrepancyReports : e => mob.$('~Discrepancy Reports report'),
+     discrepancyReportsPage : e => mob.$('~Discrepancy Reports'),
+     logOutButton : e => mob.$('~Logout exit'),
+     Username : username => mob.$('~' + username),
+     pagesUnderMenu: text => mob.$('~' + text),
+    }
+
+

@@ -1,0 +1,20 @@
+module.exports = {
+    //  addReportIcon : e => mob.$('android=.text("close add")'),
+     addReportIcon : e => mob.$('//*[@name="close"]'),
+     addNewReportPage : e => mob.$('~New Discrepancy Report'),
+     scanLocation : e => mob.$('~Scan Location'),
+     startButton : e => mob.$('~Start'),
+     storageLocation : e => mob.$("//input[contains(@placeholder , 'or start typing a location name')]"),
+     enterDiscrepancyReportName : e => mob.$('//input[@placeholder="Enter Discrepancy Report Name"]'),
+     discrepancyReportsPage : e => mob.$('android=.textContains("Discrepancy Reports")'),
+     createdReport : e => mob.$("//*[text()='Report - " + D.randomString + "']"),
+     scanningItem : e => mob.$('~SCANNING ITEMS IN:'),
+     runReport : e => mob.$('~Run Report'),
+     descripancyFound : e => mob.$$('.summariesCount'),
+     searchIcon : e => mob.$('//input[@placeholder="Search Reports"]'),
+     editIcon : e => mob.$('android=.text("close create").index(0)'),
+     loadingSpinner : e => mob.$('android=.resourceId("lbl-38")'),
+     saveProgress : e => mob.$('~Save Progress'),
+     navigateBack : e => mob.$('//ion-icon[@aria-label="arrow back"]'),
+     foundDescripancy : e => mob.$$('.label-md')[23]
+     }

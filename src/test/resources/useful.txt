@@ -1,0 +1,4 @@
+git@github.com:TrackerProducts/safe-mobile-tests.git
+https://github.com/TrackerProducts/safe-mobile-tests.git
+
+browser.waitUntil(() => ( $('selector1').isDisplayed() || $('selector2').isDisplayed() )
