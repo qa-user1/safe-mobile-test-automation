@@ -6,7 +6,7 @@
   "scripts": {
     "clean:report": "del-cli --force ./report/allure-results",
     "generate-report": "allure serve report/allure-results",
-    "local": "./node_modules/.bin/wdio src/test/config/local.conf.js",
+    "local": "npx wdio src/test/config/local.conf.js",
     "realDevice": "npm run clean:report && npx wdio src/test/config/realDevice.conf.js"
   },
   "keywords": [],
@@ -41,11 +41,16 @@
   "devDependencies": {
     "@wdio/allure-reporter": "*",
     "@wdio/appium-service": "*",
+    "@wdio/concise-reporter": "*",
+    "@wdio/dot-reporter": "*",
     "@wdio/local-runner": "*",
     "@wdio/mocha-framework": "*",
+    "@wdio/sauce-service": "^7.5.7",
+    "@wdio/spec-reporter": "*",
     "@wdio/sync": "*",
     "chai": "*",
     "chromedriver": "^91.0.0",
+    "eslint-plugin-wdio": "^7.0.0",
     "expect": "^27.0.6",
     "geckodriver": "^1.22.2",
     "mocha": "*",
