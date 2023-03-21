@@ -1,0 +1,57 @@
+{
+  "name": "appium-wdio-framework",
+  "version": "1.0.0",
+  "description": "Test Automation Framework for SAFE mobile apps",
+  "main": "./node_modules/.bin/wdio.js",
+  "scripts": {
+    "clean:report": "del-cli --force ./report/allure-results",
+    "generate-report": "allure serve report/allure-results",
+    "local": "./node_modules/.bin/wdio src/test/config/local.conf.js",
+    "realDevice": "npm run clean:report && npx wdio src/test/config/realDevice.conf.js"
+  },
+  "keywords": [],
+  "author": "Sajida Mukaca",
+  "license": "ISC",
+  "del-cli": "3.0.1",
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-syntax-export-default-from": "^7.8.3",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@wdio/browserstack-service": "*",
+    "@wdio/cli": "*",
+    "appium": "^1.18.3",
+    "babel-eslint": "^10.1.0",
+    "del-cli": "3.0.1",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "frisby": "*",
+    "imap-simple": "^5.0.0",
+    "qs": "^6.9.4",
+    "wdio-chromedriver-service": "*",
+    "webdriverio": "*"
+  },
+  "devDependencies": {
+    "@wdio/allure-reporter": "*",
+    "@wdio/appium-service": "*",
+    "@wdio/local-runner": "*",
+    "@wdio/mocha-framework": "*",
+    "@wdio/sync": "*",
+    "chai": "*",
+    "chromedriver": "^91.0.0",
+    "expect": "^27.0.6",
+    "geckodriver": "^1.22.2",
+    "mocha": "*",
+    "mocha-data-driven": "^1.0.1",
+    "wdio-chromedriver-service": "7.1.1",
+    "wdio-geckodriver-service": "1.1.2",
+    "wdio-webdriver-service": "^1.0.1"
+  }
+}
