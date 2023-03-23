@@ -1,2 +1,8 @@
 
 node_modules/*
+.idea
+package-lock.json
+allure-report
+allure-results
+.vscode
+report
