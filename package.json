@@ -6,7 +6,7 @@
   "scripts": {
     "clean:report": "del-cli --force ./report/allure-results",
     "generate-report": "allure serve report/allure-results",
-    "local": "npx wdio src/test/config/local.conf.mjs",
+    "local": "npx wdio src/test/config/local.conf.js",
     "realDevice": "npm run clean:report && npx wdio src/test/config/realDevice.conf.js"
   },
   "keywords": [],
