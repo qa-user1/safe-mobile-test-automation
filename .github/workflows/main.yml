@@ -33,3 +33,39 @@ jobs:
         run: |
           chmod +x ./start_emu_headless.sh
           EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
+          
+          steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: mainbranch
+      - name: Set up Node JS 
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.15.0'
+ 
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run local
+        
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        #id: allure-report
+        with:
+          allure_results: report/allure-results
+          #gh_pages: gh-pages
+          #allure_report: allure-report
+          allure_history: allure-history
+          keep_reports: 2
+
+ 
