@@ -25,7 +25,7 @@ caps.android = {
     capabilities: {
         platformName: 'android',
         'appium:automationName': 'UiAutomator2',
-        'appium:avd': 'Pentest',
+        'appium:avd': 'Pixel',
         'appium:app': 'src/test/resources/v104.001.apk',
         'appium:platformVersion': '11',
         'appium:avdLaunchTimeout': 120000,
