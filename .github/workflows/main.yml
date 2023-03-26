@@ -33,10 +33,7 @@ jobs:
         run: |
           chmod +x ./start_emu_headless.sh
           EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
-          
-      - uses: actions/checkout@v3
-        with:
-          ref: mainbranch
+
       - name: Set up Node JS 
         uses: actions/setup-node@v1
         with:
