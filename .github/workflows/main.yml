@@ -46,11 +46,7 @@ jobs:
 
       - name: Run tests
         run: npm run local
-      - name: Install dependencies
-        run: npm i
 
-      - name: Run tests
-        run: npm run local
 
 
 
