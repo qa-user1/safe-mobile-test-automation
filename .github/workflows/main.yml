@@ -12,7 +12,7 @@ env:
   EMULATOR_NAME: Pixel
 
 jobs:
-  playwright-emulator:
+  android-tests:
     timeout-minutes: 20
     runs-on: macos-latest
     steps:
