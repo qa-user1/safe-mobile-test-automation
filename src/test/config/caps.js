@@ -26,7 +26,7 @@ caps.android = {
         platformName: 'android',
         'appium:automationName': 'UiAutomator2',
         'appium:avd': 'Pixel',
-        'appium:app': 'src/test/resources/v104.001.apk',
+        'appium:app': 'src/test/resources/v104.006.apk',
         'appium:platformVersion': '11',
         'appium:avdLaunchTimeout': 120000,
         'appium:avdReadyTimeout': 120000,
@@ -37,9 +37,11 @@ caps.android = {
         'appium:autoGrantPermissions': true,
         'appium:clearSystemFiles': true,
         'appium:nativeWebScreenshot': true,
-        'appium:noReset': true,
+      //  'appium:noReset': true,
+        'appium:reset': true,
         'appium:fullReset': false,
-        'appium:reLaunch': false,
+       // 'appium:reLaunch': false,
+        'appium:reLaunch': true,
     }
 }
 

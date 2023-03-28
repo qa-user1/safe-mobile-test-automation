@@ -5,7 +5,7 @@ const c = require('../utils/commands');
 
 S.domain  = 'PENTEST';
 S.orgNum  = 1;
-S.debuggingMode = true;
+S.debuggingMode = false ;
 S.currentPlatform  = {
   //  mob: caps.iOS,
      mob: caps.android,
@@ -43,7 +43,7 @@ exports.config = {
             const ui = require('../pages/ui-spec');
             ui.app._________WEB_CONTEXT_________();
 
-            if (!S.isDebuggingMode()) {
+            if (S.isDebuggingMode() === false) {
                 ui.login.createDomain();
             }
 
