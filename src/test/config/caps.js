@@ -41,7 +41,7 @@ caps.android = {
         'appium:reset': true,
         'appium:fullReset': false,
        // 'appium:reLaunch': false,
-        'appium:reLaunch': true,
+        'appium:reLaunch': true
     }
 }
 
