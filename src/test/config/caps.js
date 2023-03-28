@@ -20,8 +20,8 @@ caps.RealDevice =
 }];
 
 caps.android = {
-    port: 4728,
-    path: '/',
+   // port: 4728,
+   // path: '/',
     capabilities: {
         platformName: 'android',
         'appium:automationName': 'UiAutomator2',
