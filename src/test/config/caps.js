@@ -20,12 +20,12 @@ caps.RealDevice =
 }];
 
 caps.android = {
-   // port: 4728,
-   // path: '/',
+    port: 4728,
+    path: '/',
     capabilities: {
         platformName: 'android',
         'appium:automationName': 'UiAutomator2',
-        'appium:avd': 'nexus',
+        'appium:avd': 'Pixel',
         'appium:app': 'src/test/resources/v104.006.apk',
         'appium:platformVersion': '11',
         'appium:avdLaunchTimeout': 120000,
