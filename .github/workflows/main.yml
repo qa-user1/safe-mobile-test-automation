@@ -11,6 +11,7 @@ env:
   EMULATOR_TIMEOUT: 350
   EMULATOR_NAME: nexus
 
+
 jobs:
   android-tests:
     timeout-minutes: 20

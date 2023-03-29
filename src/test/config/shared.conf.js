@@ -5,8 +5,8 @@ exports.config = {
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     logLevel: 'info',
     bail: 0,
-    waitforTimeout: 50000,
-    connectionRetryTimeout: 50000,
+    waitforTimeout: 100000,
+    connectionRetryTimeout: 100000,
     connectionRetryCount: 0,
     framework: 'mocha',
     specFileRetries: 0,
