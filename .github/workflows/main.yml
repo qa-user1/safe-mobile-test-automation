@@ -52,8 +52,11 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Chromedriver autodownload
-        run: appium --allow-insecure chromedriver_autodownload
+      - name: Install Chromedriver
+        run: npm install appium --chromedriver_version="2.16"
+        
+      - name: Run Appium server
+        run: appium --chromedriver-executable /path/to/my/chromedriver
 
       - name: Run tests
         run: npm run local
