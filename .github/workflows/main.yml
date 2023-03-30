@@ -53,7 +53,7 @@ jobs:
         run: npm i
 
       - name: Install Chromedriver
-        run: npm install appium --chromedriver_version="2.16"
+        run: npm install appium --chromedriver_version="2.42"
 
       - name: Run tests
         run: npm run local
