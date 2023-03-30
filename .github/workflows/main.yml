@@ -21,6 +21,22 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Add avdmanager and sdkmanager to system PATH
+        run: |
+         echo "$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/${{ env.ANDROID_BUILD_TOOLS_VERSION }}" >> $GITHUB_PATH
+      - name: Install Sdk
+        run: |
+          yes Y | sdkmanager --licenses
+          sdkmanager --install ${ANDROID_SDK_PACKAGES}
+
+      - name: Build emulator
+        run: |
+          echo "no" | avdmanager --verbose create avd --force -n $EMULATOR_NAME --abi "${ANDROID_TARGET}/${ANDROID_ARCH}" -k "system-images;android-${API_LEVEL};${ANDROID_TARGET};${ANDROID_ARCH}"
+      - name: Launch emulator
+        run: |
+          chmod +x ./start_emu_headless.sh
+          EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
 
       - name: install recorder and record session
         run: |
@@ -28,6 +44,18 @@ jobs:
           $ANDROID_HOME/tools/emulator -port 18725 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &
           ffmpeg -f avfoundation -i 0 -t 120 out.mov
       # node -e "const exec = require('child_process'); exec.exec('ffmpeg -f avfoundation -i 0 -t 120 out.mov'); exec.exec('$ANDROID_HOME/tools/emulator -port 18725 -verbose -no-window -no-audio -gpu swiftshader_indirect @Pixel_API_29_AOSP &');"
+
+      - name: Set up Node JS
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.15.0'
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run local
+
         env:
          HOMEBREW_NO_INSTALL_CLEANUP: 1
       - name: upload video
@@ -48,31 +76,4 @@ jobs:
         with:
          name: emulator.png
          path: emulator.png
-      - name: Set up Node JS
-        uses: actions/setup-node@v1
-        with:
-          node-version: '14.15.0'
-
-      - name: Install dependencies
-        run: npm i
-      - name: Add avdmanager and sdkmanager to system PATH
-        run: |
-         echo "$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/build-tools/${{ env.ANDROID_BUILD_TOOLS_VERSION }}" >> $GITHUB_PATH
-      - name: Install Sdk
-        run: |
-          yes Y | sdkmanager --licenses
-          sdkmanager --install ${ANDROID_SDK_PACKAGES}
-
-      - name: Build emulator
-        run: |
-          echo "no" | avdmanager --verbose create avd --force -n $EMULATOR_NAME --abi "${ANDROID_TARGET}/${ANDROID_ARCH}" -k "system-images;android-${API_LEVEL};${ANDROID_TARGET};${ANDROID_ARCH}"
-      - name: Launch emulator
-        run: |
-          chmod +x ./start_emu_headless.sh
-          EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
-
-      - name: Run tests
-        run: npm run local
-
-
 
