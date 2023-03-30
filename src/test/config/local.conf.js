@@ -57,7 +57,7 @@ exports.config = {
                 sessionOverride: true,
                 port: 4728,
                 // address: 'localhost'
-              //  allowInsecure: 'chromedriver_autodownload',
+                allowInsecure: 'chromedriver_autodownload',
             },
         }],
         ],
