@@ -54,9 +54,6 @@ jobs:
 
       - name: Install Chromedriver
         run: npm install appium --chromedriver_version="2.16"
-        
-      - name: Run Appium server
-        run: npm run appium --chromedriver-executable /path/to/my/chromedriver
 
       - name: Run tests
         run: npm run local
