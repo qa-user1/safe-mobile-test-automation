@@ -42,8 +42,7 @@ export default class LoginPage extends BasePage {
         if (!S.isDebuggingMode()) {
             if (S.isAndroid()) {
                 this._________WEB_CONTEXT_________()
-                this.pause(0.5)
-                backIcon().click()
+                this.cleanUp()
                 this.enterValue(emailInput(), credentials.email);
                 this.enterValue(passwordInput(), credentials.password);
                 this.pause(0.3)

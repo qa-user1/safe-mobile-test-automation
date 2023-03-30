@@ -8,7 +8,7 @@ env:
   API_LEVEL: 30
   ANDROID_BUILD_TOOLS_VERSION: 30.0.0
   ANDROID_SDK_PACKAGES: system-images;android-30;google_apis_playstore;x86_64 platforms;android-30 build-tools;30.0.0 platform-tools emulator
-  EMULATOR_TIMEOUT: 350
+  EMULATOR_TIMEOUT: 500
   EMULATOR_NAME: nexus
 
 
@@ -51,15 +51,18 @@ jobs:
 
       - name: Install dependencies
         run: npm i
-        
+
       - name: Start the Appium Server
         run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
- 
+
       - name: Poll for Appium Server to Start
         run: |
           until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
             sleep 5
           done
+
+      - name: Install chromedriver
+        run: npm install appium --chromedriver_version="83.0.4103"
 
       - name: Run tests
         run: npm run local
