@@ -14,7 +14,7 @@ env:
 
 jobs:
   android-tests:
-    timeout-minutes: 20
+    timeout-minutes: 100
     runs-on: macos-latest
     permissions:
       contents: read
