@@ -4,7 +4,8 @@ import BasePage from './basePage';
 
 let el,
     emailInput = e => mob.$('//*[@formcontrolname="email"]//input'),
-    passwordInput = e => mob.$('//*[@formcontrolname="password"]//input')
+    passwordInput = e => mob.$('//*[@formcontrolname="password"]//input'),
+    backIcon = e => mob.$('.back-button')
 
 export default class LoginPage extends BasePage {
     constructor () {
@@ -39,28 +40,29 @@ export default class LoginPage extends BasePage {
 
     logIn (credentials) {
         if (!S.isDebuggingMode()) {
-            this._________NATIVE_CONTEXT_________();
             if (S.isAndroid()) {
                 this._________WEB_CONTEXT_________()
-                this.cleanUp();
+                this.pause(0.5)
+                backIcon().click()
                 this.enterValue(emailInput(), credentials.email);
                 this.enterValue(passwordInput(), credentials.password);
                 this.pause(0.3)
                 this.clickButton('Login');
-            } else {
-                this.clickElementIfVisible(el.backButton());
-
-            this.enterValue(el.emailInput(), credentials.email);
-            this.enterValue(el.passwordInput(), credentials.password);
-            this.waitAndClick(el.loginButton());
             }
-            try {
+            else {
+                this._________NATIVE_CONTEXT_________();
+                this.clickElementIfVisible(el.backButton());
+                this.enterValue(el.emailInput(), credentials.email);
+                this.enterValue(el.passwordInput(), credentials.password);
+                this.waitAndClick(el.loginButton());
+            }
+         /*   try {
                 this.waitElementToBeVisible(el.userLoggedInAlert(), true, false, 5000);
                 this.waitAndClick(el.okButton());
                 this.waitElementToBeVisible(el.homePageHeader());
             } catch (error) {
                 console.log('No user alert modal');
-            }
+            }*/
             this._________WEB_CONTEXT_________();
         }
         return this;

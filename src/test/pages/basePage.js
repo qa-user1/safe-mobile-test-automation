@@ -351,7 +351,7 @@ export default class BasePage {
         this.waitLoaderToDisappear();
         el.waitForDisplayed()
         const selectorValue = el.getValue();
-        for(let i=0; i< selectorValue.length +1; i++) {
+        for(let i=0; i< selectorValue.length +2; i++) {
             this.pause(0.2)
             el.setValue('Backspace')
         }
