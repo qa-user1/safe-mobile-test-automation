@@ -52,17 +52,17 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Start the Appium Server
-        run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
+    #  - name: Start the Appium Server
+     #   run: ./node_modules/.bin/appium --log-timestamp --log-no-colors --allow-insecure chromedriver_autodownload > appium.log &
 
-      - name: Poll for Appium Server to Start
-        run: |
-          until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
-            sleep 5
-          done
+    #  - name: Poll for Appium Server to Start
+     #   run: |
+     #     until $(curl --output /dev/null --silent --head --fail http://127.0.0.1:4723/wd/hub/sessions); do
+     #       sleep 5
+     #     done
 
-      - name: Install chromedriver
-        run: npm install appium --chromedriver_version="83.0.4103"
+    #  - name: Install chromedriver
+    #    run: npm install appium --chromedriver_version="83.0.4103"
 
       - name: Run tests
         run: npm run local
