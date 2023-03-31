@@ -60,19 +60,19 @@ jobs:
         env:
          HOMEBREW_NO_INSTALL_CLEANUP: 1
       - name: upload video
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@master
         continue-on-error: true
         with:
          name: out
          path: out.mov
 
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@master
         continue-on-error: true
         with:
          name: screenshot.jpg
          path: screenshot.jpg
 
-      - uses: actions/upload-artifact@main
+      - uses: actions/upload-artifact@master
         continue-on-error: true
         with:
          name: emulator.png
