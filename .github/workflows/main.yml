@@ -41,9 +41,9 @@ jobs:
       - name: install recorder and record session
         run: |
           brew install ffmpeg
-          $ANDROID_HOME/tools/emulator -port 18725 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &
+          $ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &
           ffmpeg -f avfoundation -i 0 -t 120 out.mov
-      # node -e "const exec = require('child_process'); exec.exec('ffmpeg -f avfoundation -i 0 -t 120 out.mov'); exec.exec('$ANDROID_HOME/tools/emulator -port 18725 -verbose -no-window -no-audio -gpu swiftshader_indirect @Pixel_API_29_AOSP &');"
+          node -e "const exec = require('child_process'); exec.exec('ffmpeg -f avfoundation -i 0 -t 120 out.mov'); exec.exec('$ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &');"
 
       - name: Set up Node JS
         uses: actions/setup-node@v1
@@ -66,13 +66,13 @@ jobs:
          name: out
          path: out.mov
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@main
         continue-on-error: true
         with:
          name: screenshot.jpg
          path: screenshot.jpg
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@main
         continue-on-error: true
         with:
          name: emulator.png
