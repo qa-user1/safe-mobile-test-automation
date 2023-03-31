@@ -26,9 +26,11 @@ export default class LoginPage extends BasePage {
     }
 
     createDomain () {
-        this._________NATIVE_CONTEXT_________();
+        this._________WEB_CONTEXT_________()
         //this.waitElementToBeVisible(el.welcomeHeader());
-        this.waitAndClick(el.settingsButton());
+        this.clickButton('Settings')
+      //  this.waitAndClick(el.settingsButton());
+        this._________NATIVE_CONTEXT_________();
         this.waitAndClick(el.addButton());
         this.waitElementToBeVisible(el.addDomainHeader());
         this.enterValue(el.domainName(), S.domain);
