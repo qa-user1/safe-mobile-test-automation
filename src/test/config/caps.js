@@ -25,7 +25,7 @@ caps.android = {
     capabilities: {
         platformName: 'android',
         'appium:automationName': 'UiAutomator2',
-        'appium:avd': 'nexus',
+        'appium:avd': 'Pixel_4_xl',
         'appium:app': 'src/test/resources/v104.006.apk',
         'appium:platformVersion': '11',
         'appium:avdLaunchTimeout': 500000,
