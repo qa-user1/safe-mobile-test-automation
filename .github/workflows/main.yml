@@ -9,7 +9,7 @@ env:
   ANDROID_BUILD_TOOLS_VERSION: 30.0.0
   ANDROID_SDK_PACKAGES: system-images;android-30;google_apis_playstore;x86_64 platforms;android-30 build-tools;30.0.0 platform-tools emulator
   EMULATOR_TIMEOUT: 600
-  EMULATOR_NAME: nexus
+  EMULATOR_NAME: Pixel_4_xl
 
 
 jobs:
@@ -41,7 +41,7 @@ jobs:
       - name: install recorder and record session
         run: |
           brew install ffmpeg
-          $ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &
+          $ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @Pixel_4_xl &
           ffmpeg -f avfoundation -i 0 -t 120 out.mov
          # node -e "const exec = require('child_process'); exec.exec('ffmpeg -f avfoundation -i 0 -t 120 out.mov'); exec.exec('$ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &');"
 
