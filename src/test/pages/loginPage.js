@@ -6,7 +6,10 @@ let el,
     emailInput = e => mob.$('//*[@formcontrolname="email"]//input'),
     passwordInput = e => mob.$('//*[@formcontrolname="password"]//input'),
     backIcon = e => mob.$('.back-button'),
-    domainInputFiled = e => mob.$$('[placeholder="Enter Domain Here"]')[1]
+    domainInputFiled = e => mob.$('//*[@placeholder="Enter Domain Here"]//input'),
+    URLInputFiled = e => mob.$$('//*[@placeholder="Enter URL Here"]//input')[0],
+    mediaURLInputFiled = e => mob.$$('//*[@placeholder="Enter URL Here"]//input')[1],
+    checkmarkIcon = e => mob.$('//page-add-domain//ion-header//ion-navbar//ion-buttons//button')
 
 export default class LoginPage extends BasePage {
     constructor () {
@@ -31,12 +34,15 @@ export default class LoginPage extends BasePage {
         //this.waitElementToBeVisible(el.welcomeHeader());
         this.clickButton('Settings')
         this.clickButton('Add');
-      //  this.waitAndClick(el.settingsButton());
-       // this._________NATIVE_CONTEXT_________();
-      //  this.waitElementToBeVisible(el.addDomainHeader());
         this.enterValue(domainInputFiled(), S.domain);
-       // this.enterValue(el.domainUrl(), S.api_url);
-      //  this.enterValue(el.domainMediaUrl(), S.media_api_url);
+        URLInputFiled().addValue( 'pentestapi.trackerproducts.com');
+        mediaURLInputFiled().addValue( 'pentestmedia.trackerproducts.com');
+        this.waitAndClick(checkmarkIcon());
+      //  this.waitAndClick(el.settingsButton());
+      //  this._________NATIVE_CONTEXT_________();
+       // this.waitElementToBeVisible(el.addDomainHeader());
+     //   this.enterValue(el.domainUrl(), S.api_url);
+     //   this.enterValue(el.domainMediaUrl(), S.media_api_url);
       //  this.waitAndClick(el.trueIcon());
         return this;
     }

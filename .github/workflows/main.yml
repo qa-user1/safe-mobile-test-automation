@@ -9,7 +9,7 @@ env:
   ANDROID_BUILD_TOOLS_VERSION: 30.0.0
   ANDROID_SDK_PACKAGES: system-images;android-30;google_apis_playstore;x86_64 platforms;android-30 build-tools;30.0.0 platform-tools emulator
   EMULATOR_TIMEOUT: 600
-  EMULATOR_NAME: Pixel_4_xl
+  EMULATOR_NAME: nexus
 
 
 jobs:
@@ -37,11 +37,13 @@ jobs:
         run: |
           chmod +x ./start_emu_headless.sh
           EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
+          screencapture screenshot.jpg
+          $ANDROID_HOME/platform-tools/adb exec-out screencap -p > emulator.png
 
      # - name: install recorder and record session
      #   run: |
           #    brew install ffmpeg
-          #     $ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @Pixel_4_xl &
+          #     $ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &
           #      ffmpeg -f avfoundation -i 0 -t 120 out.mov
          # node -e "const exec = require('child_process'); exec.exec('ffmpeg -f avfoundation -i 0 -t 120 out.mov'); exec.exec('$ANDROID_HOME/tools/emulator -port 4728 -verbose -no-window -no-audio -gpu swiftshader_indirect @nexus &');"
 
@@ -57,24 +59,24 @@ jobs:
         run: npm run local
         continue-on-error: true
 
-          #    env:
-      #      HOMEBREW_NO_INSTALL_CLEANUP: 1
+              env:
+            HOMEBREW_NO_INSTALL_CLEANUP: 1
         #   - name: upload video
-        #     uses: actions/upload-artifact@master
-        #     continue-on-error: true
-          #    with:
-          #     name: out
-      #     path: out.mov
+         #    uses: actions/upload-artifact@master
+          #   continue-on-error: true
+           #   with:
+            #   name: out
+           #path: out.mov
 
-        #   - uses: actions/upload-artifact@master
-        #     continue-on-error: true
-          #  with:
-          #   name: screenshot.jpg
-      #   path: screenshot.jpg
+           - uses: actions/upload-artifact@master
+             continue-on-error: true
+             with:
+             name: screenshot.jpg
+             path: screenshot.jpg
 
-        # - uses: actions/upload-artifact@master
-        #    continue-on-error: true
-          #    with:
-          #     name: emulator.png
-      #    path: emulator.png
+         - uses: actions/upload-artifact@master
+            continue-on-error: true
+              with:
+               name: emulator.png
+               path: emulator.png
 

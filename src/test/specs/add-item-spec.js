@@ -32,13 +32,13 @@ describe('Add Item - Org Admin', () => {
         });
 
         it.only ('A.I_1.1 Add Item with all fields from Main Menu', () => {
-           /* ui.menu.navigateTo(C.menu.addItem);
+            ui.menu.navigateTo(C.menu.addItem);
              ui.addItems
                  .selectCase(D.newCase.caseNumber)
                  .verifyItemNumberOnAddItemPage('1')
                  .populateAllFields(D.newItem)
                  .clickSave();
-             ui.itemView.verifyAllValues(D.newItem);*/
+             ui.itemView.verifyAllValues(D.newItem);
         });
     });
 
