@@ -67,7 +67,7 @@ jobs:
         # name: out
        #  path: out.mov
 
-      - uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
               name: screenshot.jpg
               path: screenshot.jpg
