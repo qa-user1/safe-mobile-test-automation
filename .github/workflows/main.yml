@@ -56,7 +56,9 @@ jobs:
         run: npm i
 
       - name: Run tests
-        run: npm run local
+        run: |
+         npm run local
+         screencapture screenshot.jpg
         continue-on-error: true
 
         env:
