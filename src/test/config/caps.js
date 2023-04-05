@@ -86,13 +86,14 @@ caps.iOS =
             'appium:automationName': 'XCUITest',
             //'appium:platformVersion': '14.2',
             'appium:avdLaunchTimeout': 500000,
-            'appium:noReset': true,
+            'appium:reset': true,
             'appium:reLaunch': true,
+            'appium:fullReset': false,
             'appium:agent':({ keepAlive: true }),
             'appium:avdReadyTimeout': 500000,
             'appium:ensureWebviewsHavePages': true,
             'appium:WebView.setWebContentsDebuggingEnabled': true,
-             "simulatorStartupTimeout": 500000
+             "appium:simulatorStartupTimeout": 500000
         }
     }
 
