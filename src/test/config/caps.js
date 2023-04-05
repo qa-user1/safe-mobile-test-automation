@@ -91,7 +91,8 @@ caps.iOS =
             'appium:agent':({ keepAlive: true }),
             'appium:avdReadyTimeout': 500000,
             'appium:ensureWebviewsHavePages': true,
-            'appium:WebView.setWebContentsDebuggingEnabled': true
+            'appium:WebView.setWebContentsDebuggingEnabled': true,
+             "simulatorStartupTimeout": 500000
         }
     }
 

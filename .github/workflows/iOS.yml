@@ -1,9 +1,6 @@
 name: iOS Simulator
 on:
   workflow_dispatch:
-env:
-  EMULATOR_TIMEOUT: 600
-  EMULATOR_NAME: iPhone 11
 
 jobs:
   iOS-tests:
@@ -27,8 +24,7 @@ jobs:
          xcrun simctl list runtimes
          xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-14-2"
          xcrun simctl list devices 14.2
-         chmod +x ./start_emu_headless.sh
-         EMULATOR_TIMEOUT=$EMULATOR_TIMEOUT EMULATOR_NAME=$EMULATOR_NAME ./start_emu_headless.sh
+
 
       - name: Set up Node JS
         uses: actions/setup-node@v1
