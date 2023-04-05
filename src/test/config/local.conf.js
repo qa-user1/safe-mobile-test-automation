@@ -7,8 +7,8 @@ S.domain  = 'PENTEST';
 S.orgNum  = 1;
 S.debuggingMode = false ;
 S.currentPlatform  = {
-  //  mob: caps.iOS,
-     mob: caps.android,
+    mob: caps.iOS,
+   //  mob: caps.android,
 };
 
   const specs = [
