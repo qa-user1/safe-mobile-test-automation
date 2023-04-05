@@ -80,7 +80,7 @@ caps.iOS =
         capabilities: {
 
             platformName: 'iOS',
-            'appium:deviceName': 'iPhone_11',
+            'appium:deviceName': 'iPhone 11',
             // eslint-disable-next-line no-undef
             'appium:app': path.resolve(__dirname, '../resources/v104.001.zip'),
             'appium:automationName': 'XCUITest',
