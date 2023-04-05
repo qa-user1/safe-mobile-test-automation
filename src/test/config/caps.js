@@ -85,11 +85,11 @@ caps.iOS =
             'appium:app': path.resolve(__dirname, '../resources/v104.001.zip'),
             'appium:automationName': 'XCUITest',
             //'appium:platformVersion': '14.2',
-            'appium:avdLaunchTimeout': 50000,
+            'appium:avdLaunchTimeout': 500000,
             'appium:noReset': true,
             'appium:reLaunch': true,
             'appium:agent':({ keepAlive: true }),
-            'appium:avdReadyTimeout': 50000,
+            'appium:avdReadyTimeout': 500000,
             'appium:ensureWebviewsHavePages': true,
             'appium:WebView.setWebContentsDebuggingEnabled': true
         }
