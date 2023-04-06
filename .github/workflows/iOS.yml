@@ -24,8 +24,7 @@ jobs:
          xcrun simctl list runtimes
          xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-14-2" > deviceid.txt 
            DEVICEUUID=`cat deviceid.txt`          
-           echo $DEVICEUUID          
-           sed -i -e "s/{IPHONE_UUID}/$DEVICEUUID/g" __tests__/e2e/template_appium_configs_ios.js          
+           echo $DEVICEUUID                     
            xcrun simctl boot $DEVICEUUID &
          xcrun simctl list devices 14.2
 
