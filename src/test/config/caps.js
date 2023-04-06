@@ -83,7 +83,7 @@ caps.iOS =
             'appium:deviceName': 'iPhone 11',
             // eslint-disable-next-line no-undef
             'appium:app': path.resolve(__dirname, '../resources/v104.006.zip'),
-            'appium:udid': 'auto',
+           // 'appium:udid': 'auto',
             'appium:xcodeSigningId': 'iPhone Developer',
             'appium:automationName': 'XCUITest',
             //'appium:platformVersion': '14.2',
