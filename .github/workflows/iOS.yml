@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer && xcodebuild -version
+        run: sudo xcode-select -s /Applications/Xcode_12.2.app/Contents/Developer && xcodebuild -version
 
       - name: install simulator
         run: xcversion simulators --install='iOS 14.2'
@@ -20,9 +20,13 @@ jobs:
       - name: Prepare iOS 14.2 simulator
         run: |
          sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-         sudo ln -s /Applications/Xcode_12.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.2.simruntime
+         sudo ln -s /Applications/Xcode_12.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.2.simruntime
          xcrun simctl list runtimes
-         xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-14-2"
+         xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-14-2" > deviceid.txt 
+           DEVICEUUID=`cat deviceid.txt`          
+           echo $DEVICEUUID          
+           sed -i -e "s/{IPHONE_UUID}/$DEVICEUUID/g" __tests__/e2e/template_appium_configs_ios.js          
+           xcrun simctl boot $DEVICEUUID &
          xcrun simctl list devices 14.2
 
 
