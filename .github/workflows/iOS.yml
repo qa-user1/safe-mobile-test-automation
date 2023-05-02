@@ -5,25 +5,25 @@ on: [ push ]
 jobs:
   iOS-tests:
     timeout-minutes: 100
-    runs-on: macos-latest
+    runs-on: macos-11
     permissions:
       contents: read
       packages: write
     steps:
       - uses: actions/checkout@v3
       - name: Select Xcode
-        run: sudo xcode-select -s /Applications/Xcode_14.2.app/Contents/Developer && xcodebuild -version
+        run: sudo xcode-select -s /Applications/Xcode_13.2.1.app/Contents/Developer && xcodebuild -version
 
       - name: Prepare iOS 14.2 simulator
         run: |
          sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
-         sudo ln -s /Applications/Xcode_14.2.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.2.simruntime
+         sudo ln -s /Applications/Xcode_13.2.1.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.2.simruntime
          xcrun simctl list runtimes
-         xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-16-2" > deviceid.txt 
+         xcrun simctl create iPhone_11 "iPhone 11" "com.apple.CoreSimulator.SimRuntime.iOS-15-2" > deviceid.txt 
            DEVICEUUID=`cat deviceid.txt`          
            echo $DEVICEUUID                     
            xcrun simctl boot $DEVICEUUID &
-         xcrun simctl list devices 16.2
+         xcrun simctl list devices 15.2
          open -a Simulator.app
 
 
