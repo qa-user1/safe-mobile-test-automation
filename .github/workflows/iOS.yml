@@ -24,6 +24,7 @@ jobs:
            echo $DEVICEUUID                     
            xcrun simctl boot $DEVICEUUID &
          xcrun simctl list devices 16.2
+         open -a Simulator.app
 
 
       - name: Set up Node JS
