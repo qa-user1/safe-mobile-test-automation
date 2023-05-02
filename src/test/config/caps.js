@@ -87,15 +87,15 @@ caps.iOS =
             'appium:xcodeSigningId': 'iPhone Developer',
             'appium:automationName': 'XCUITest',
             //'appium:platformVersion': '14.2',
-            'appium:avdLaunchTimeout': 60000,
+            'appium:avdLaunchTimeout': 120000,
             'appium:reset': true,
             'appium:reLaunch': true,
             'appium:fullReset': false,
             'appium:agent':({ keepAlive: true }),
-            'appium:avdReadyTimeout': 60000,
+            'appium:avdReadyTimeout': 120000,
             'appium:ensureWebviewsHavePages': true,
             'appium:WebView.setWebContentsDebuggingEnabled': true,
-             "appium:simulatorStartupTimeout": 60000
+             "appium:simulatorStartupTimeout": 120000
         }
     }
 
