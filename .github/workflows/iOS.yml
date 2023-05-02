@@ -16,8 +16,7 @@ jobs:
 
       - name: install simulator
         run: |
-          xcversion simulators
-          xcversion simulators --install='iPhone 14'
+          xcrun simctl list
 
       - name: Prepare iOS 14.2 simulator
         run: |
