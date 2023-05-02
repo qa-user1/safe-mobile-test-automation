@@ -25,7 +25,6 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
-    "@wdio/browserstack-service": "^7.7.3",
     "@wdio/cli": "^7.7.3",
     "appium": "^1.18.3",
     "babel-eslint": "^10.1.0",
