@@ -15,7 +15,7 @@ jobs:
         run: sudo xcode-select -s /Applications/Xcode_14.2.app/Contents/Developer && xcodebuild -version
 
       - name: install simulator
-        run: xcversion simulators --install='iOS 14.2'
+        run: xcversion simulators --install='iOS 16.2'
 
       - name: Prepare iOS 14.2 simulator
         run: |
