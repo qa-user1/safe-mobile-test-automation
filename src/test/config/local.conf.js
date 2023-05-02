@@ -12,21 +12,7 @@ S.currentPlatform  = {
 };
 
   const specs = [
-   // 'src/test/specs/add-case-spec.js',
-   // 'src/test/specs/edit-case-spec.js',
-     'src/test/specs/add-item-spec.js',
-     //  'src/test/specs/edit-item-spec.js',
-    //   'src/test/specs/item-transactions-spec.js',
-   // 'src/test/specs/add-person-spec.js',
-  //  'src/test/specs/edit-person-spec.js',
-  //  'src/test/specs/person-addresses-spec.js',
-  //  'src/test/specs/add-task-spec.js',
- //  'src/test/specs/edit-task-spec.js',
-  // 'src/test/specs/add-note-spec.js',
- // 'src/test/specs/edit-note-spec.js',
-    ///  'src/test/specs/add-media-spec.js',
- // 'src/test/specs/barcode-scanner-spec.js',
- //  'src/test/specs/search-case-spec.js'
+    'src/test/specs/add-case-spec.js'
 
 ];
 exports.config = {
