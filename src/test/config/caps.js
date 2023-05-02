@@ -78,7 +78,9 @@ caps.iOS =
         port: 4728,
         path: '/',
         capabilities: {
-
+            'goog:chromeOptions': {
+                 args: ['--disable-features=VizDisplayCompositor?', '--disable-gpu'],
+            },
             platformName: 'iOS',
             'appium:deviceName': 'iPhone 11',
             // eslint-disable-next-line no-undef
