@@ -25,6 +25,8 @@ jobs:
            xcrun simctl boot $DEVICEUUID &
          xcrun simctl list devices 14.5
          open -a Simulator.app
+         sudo /usr/bin/xcode-select -switch /Applications/Xcode.app/Contents/Developer
+         xcrun --sdk iphonesimulator --show-sdk-version
 
 
       - name: Set up Node JS
