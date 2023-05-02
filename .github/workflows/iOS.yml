@@ -5,7 +5,7 @@ on: [ push ]
 jobs:
   iOS-tests:
     timeout-minutes: 100
-    runs-on: macos-11
+    runs-on: macos-10
     permissions:
       contents: read
       packages: write
