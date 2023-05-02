@@ -14,10 +14,6 @@ jobs:
       - name: Select Xcode
         run: sudo xcode-select -s /Applications/Xcode_14.2.app/Contents/Developer && xcodebuild -version
 
-      - name: install simulator
-        run: |
-          xcrun simctl list
-
       - name: Prepare iOS 14.2 simulator
         run: |
          sudo mkdir -p /Library/Developer/CoreSimulator/Profiles/Runtimes
