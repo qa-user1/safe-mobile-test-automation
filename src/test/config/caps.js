@@ -91,6 +91,7 @@ caps.iOS =
             'appium:avdLaunchTimeout': 120000,
             'appium:reset': true,
             'appium:reLaunch': true,
+            'appium:showIOSLog': true,
             'appium:fullReset': false,
             'appium:agent': ({keepAlive: true}),
             'appium:avdReadyTimeout': 120000,
