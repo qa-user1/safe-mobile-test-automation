@@ -41,7 +41,7 @@ exports.config = {
             args: {
                 debugLogSpacing: true,
                 sessionOverride: true,
-                port: 4728,
+                port: 4729,
                 // address: 'localhost'
                 allowInsecure: 'chromedriver_autodownload',
             },

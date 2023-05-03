@@ -75,7 +75,7 @@ caps.android = {
 caps.iOS =
 
     {
-        port: 4728,
+        port: 4729,
         path: '/',
         capabilities: {
             'goog:chromeOptions': {
@@ -89,15 +89,15 @@ caps.iOS =
            // 'appium:xcodeSigningId': 'iPhone Developer',
             'appium:automationName': 'XCUITest',
            // 'appium:platformVersion': '14.5',
-            'appium:avdLaunchTimeout': 120000,
-            'appium:reset': true,
-            'appium:reLaunch': true,
-            'appium:fullReset': false,
-            'appium:agent':({ keepAlive: true }),
-            'appium:avdReadyTimeout': 120000,
-            'appium:ensureWebviewsHavePages': true,
-            'appium:WebView.setWebContentsDebuggingEnabled': true,
-             "appium:simulatorStartupTimeout": 120000
+           //  'appium:avdLaunchTimeout': 120000,
+           //  'appium:reset': true,
+           //  'appium:reLaunch': true,
+           //  'appium:fullReset': false,
+           //  'appium:agent':({ keepAlive: true }),
+           //  'appium:avdReadyTimeout': 120000,
+           //  'appium:ensureWebviewsHavePages': true,
+           //  'appium:WebView.setWebContentsDebuggingEnabled': true,
+           //   "appium:simulatorStartupTimeout": 120000
         }
     }
 
