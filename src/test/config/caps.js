@@ -89,6 +89,7 @@ caps.iOS =
            // 'appium:xcodeSigningId': 'iPhone Developer',
             'appium:automationName': 'XCUITest',
             'appium:platformVersion': '14.5',
+            'appium:USE_PREBUILT_WDA': true,
             'appium:avdLaunchTimeout': 120000,
             'appium:reset': true,
             'appium:reLaunch': true,
