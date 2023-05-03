@@ -7,7 +7,7 @@ exports.config = {
     bail: 0,
     waitforTimeout: 40000,
     connectionRetryTimeout: 400000,
-    connectionRetryCount: 5,
+    connectionRetryCount: 0,
     framework: 'mocha',
     specFileRetries: 0,
     specFileRetriesDelay: 10,
@@ -22,7 +22,7 @@ exports.config = {
     mochaOpts: {
         ui: 'bdd',
         timeout: 9000000,
-        retries: 5,
+        retries: 0,
         require: ['@babel/register'],
 
     },
