@@ -18,8 +18,7 @@ jobs:
         uses: futureware-tech/simulator-action@v2
         with:
           model: 'iPhone 11'
-      - run: flutter drive
-
+    
       - name: Set up Node JS
         uses: actions/setup-node@v3
         with:
