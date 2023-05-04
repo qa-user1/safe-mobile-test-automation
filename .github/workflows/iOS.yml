@@ -20,7 +20,7 @@ jobs:
           sudo ln -s /Applications/Xcode_12.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS.simruntime /Library/Developer/CoreSimulator/Profiles/Runtimes/iOS\ 14.4.simruntime
           xcrun simctl list runtimes
           open -a Simulator --args -CurrentDeviceUDID "$(xcrun simctl list devices 14.4| grep "iPhone 8 Plus" |  awk '{print substr($0,length($0)-36,24)}')"
-          echo Simulator UDID is "$(xcrun simctl list devices 14.4| grep "iPhone 8 Plus" |  awk '{print substr($0,length($0)-36,24)}')"
+          echo Simulator UDID is "$(xcrun simctl list devices 14.4| grep "iPhone 8 Plus" |  awk '{print substr($0,length($0)-24,24)}')"
           xcrun simctl list devices 14.4
 
       - name: Set up Node JS
