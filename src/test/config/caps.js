@@ -82,7 +82,7 @@ caps.iOS =
                  args: ['--disable-features=VizDisplayCompositor?', '--disable-gpu'],
             },
             platformName: 'iOS',
-            'appium:deviceName': 'iPhone 8',
+            'appium:deviceName': 'iPhone 8 Plus',
             // eslint-disable-next-line no-undef
             'appium:app': path.resolve(__dirname, '../resources/v104.006.zip'),
            // 'appium:udid': 'auto',
