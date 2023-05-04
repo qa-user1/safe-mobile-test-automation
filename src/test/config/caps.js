@@ -93,17 +93,17 @@ caps.iOS =
             // 'appium:iosInstallPause': '8000',
             // 'appium:wdaStartupRetryInterval': '20000',
             'appium:USE_PREBUILT_WDA': false,
-            'appium:avdLaunchTimeout': 120000,
+            'appium:avdLaunchTimeout': 200000,
             'appium:reset': true,
             'appium:reLaunch': true,
             'appium:showIOSLog': true,
             'appium:showXcodeLog': true,
             'appium:fullReset': false,
             'appium:agent': ({keepAlive: true}),
-            'appium:avdReadyTimeout': 120000,
+            'appium:avdReadyTimeout': 200000,
             'appium:ensureWebviewsHavePages': true,
             'appium:WebView.setWebContentsDebuggingEnabled': true,
-            "appium:simulatorStartupTimeout": 120000
+            "appium:simulatorStartupTimeout": 200000
         }
     }
 
