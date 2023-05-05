@@ -1,5 +1,5 @@
 import WebView from './WebView';
-import caps from '../config/caps'
+import caps from '../configuration/caps'
 const SELECTORS = {
     WEB_VIEW_SCREEN: caps.android.isAndroid
         ? '*//android.webkit.WebView'

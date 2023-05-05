@@ -15,7 +15,7 @@ before(async () => {
     powerUser = S.getUserData(S.userAccounts.powerUser);
 });
 
-describe('Add Case - Org Admin', () => {
+describe('Add Case - Org Admin', async () => {
 
     before(() => {
         ui.login.logIn(admin);

@@ -1,4 +1,4 @@
-import caps from '../config/caps'
+import caps from '../configuration/caps'
 export const CONTEXT_REF = {
     NATIVE: 'native',
     WEBVIEW: 'webview',

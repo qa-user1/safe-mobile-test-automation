@@ -1,18 +1,18 @@
 const S = require('../utils/settings.js');
-const { config } = require('./shared.conf');
+const config = require('./shared.conf');
 const caps = require('./caps');
 const c = require('../utils/commands');
 
-S.domain  = 'PENTEST';
-S.orgNum  = 1;
-S.debuggingMode = false ;
-S.currentPlatform  = {
+S.domain = 'PENTEST';
+S.orgNum = 1;
+S.debuggingMode = false;
+S.currentPlatform = {
     mob: caps.iOS,
-   //  mob: caps.android,
+    //  mob: caps.android,
 };
 
-  const specs = [
-    'src/test/specs/add-case-spec.js'
+const specs = [
+    'add-case-spec.js'
 
 ];
 exports.config = {

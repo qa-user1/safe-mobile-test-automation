@@ -1,4 +1,4 @@
-require('@wdio/mocha-framework');
+import('@wdio/mocha-framework');
 const helper = require('./helper')
 
 let C = exports;
