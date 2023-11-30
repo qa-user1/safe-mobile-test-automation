@@ -7,12 +7,12 @@ S.domain = 'PENTEST';
 S.orgNum = 1;
 S.debuggingMode = false;
 S.currentPlatform = {
-    mob: caps.iOS,
-    //  mob: caps.android,
+  //  mob: caps.iOS,
+      mob: caps.android,
 };
 
 const specs = [
-    'add-case-spec.js'
+    './specs/example.e2e.js'
 
 ];
 exports.config = {
@@ -20,18 +20,18 @@ exports.config = {
     ...{
         specs: specs,
         capabilities: S.currentPlatform,
-        before: function (capabilities, specs) {
+        before: async function (capabilities, specs) {
 
             console.log('Current CAPS __________' + JSON.stringify(capabilities));
             console.log('CURRENT PLATFORM ' + capabilities.mob.capabilities.platformName)
 
             S.setEnvironmentProperties(S.orgNum);
             const ui = require('../pages/ui-spec');
-            ui.app._________WEB_CONTEXT_________();
+            await ui.app._________WEB_CONTEXT_________();
 
-            if (S.isDebuggingMode() === false) {
-                ui.login.createDomain();
-            }
+            // if (S.isDebuggingMode() === false) {
+            //     ui.login.createDomain();
+            // }
 
             console.log('Selected environment: ' + JSON.stringify(S.selectedEnvironment));
         },
@@ -41,7 +41,7 @@ exports.config = {
             args: {
                 debugLogSpacing: true,
                 sessionOverride: true,
-                port: 4729,
+                port: 4727,
                 // address: 'localhost'
                 allowInsecure: 'chromedriver_autodownload',
             },

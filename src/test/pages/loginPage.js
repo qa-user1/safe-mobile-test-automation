@@ -29,21 +29,21 @@ export default class LoginPage extends BasePage {
         return this;
     }
 
-    createDomain () {
-        this._________WEB_CONTEXT_________()
-        //this.waitElementToBeVisible(el.welcomeHeader());
-        this.clickButton('Settings')
-        this.clickButton('Add');
-        this.enterValue(domainInputFiled(), S.domain);
+    async createDomain () {
+        await this._________WEB_CONTEXT_________()
+        //await this.waitElementToBeVisible(el.welcomeHeader());
+        await this.clickButton('Settings')
+        await this.clickButton('Add');
+        await this.enterValue(domainInputFiled(), S.domain);
         URLInputFiled().addValue( 'pentestapi.trackerproducts.com');
         mediaURLInputFiled().addValue( 'pentestmedia.trackerproducts.com');
-        this.waitAndClick(checkmarkIcon());
-      //  this.waitAndClick(el.settingsButton());
-      //  this._________NATIVE_CONTEXT_________();
-       // this.waitElementToBeVisible(el.addDomainHeader());
-     //   this.enterValue(el.domainUrl(), S.api_url);
-     //   this.enterValue(el.domainMediaUrl(), S.media_api_url);
-      //  this.waitAndClick(el.trueIcon());
+        await this.waitAndClick(checkmarkIcon());
+      //  await this.waitAndClick(el.settingsButton());
+      //  await this._________NATIVE_CONTEXT_________();
+       // await this.waitElementToBeVisible(el.addDomainHeader());
+     //   await this.enterValue(el.domainUrl(), S.api_url);
+     //   await this.enterValue(el.domainMediaUrl(), S.media_api_url);
+      //  await this.waitAndClick(el.trueIcon());
         return this;
     }
 

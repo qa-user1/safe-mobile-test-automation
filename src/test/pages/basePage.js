@@ -6,10 +6,8 @@ import { expect } from 'chai';
 import C from '../utils/constants';
 const path = require ('path')
 
-
-import waitUntil from 'webdriverio/build/commands/browser/waitUntil';
-
 let loadingMessage = e => mob.$('//div[@class=\'loading-wrapper\']//div[text()=\'Please wait...\']'),
+    mainWebPageWrapper = e => mob.$('//body'),
     tagField = e => mob.$('//*[@formcontrolname="tags"]//input'),
     categoryDropdown = e => mob.$('//*[@formcontrolname="categoryId"]'),
     custodyReason = e => mob.$('//*[@formcontrolname="custodyReasonId"]'),
@@ -141,21 +139,17 @@ export default class BasePage {
         }
     };
 
-   waitForWebViewContextLoaded () {
-        driver.waitUntil(
-             () => {
-                const currentContexts = mob.getContexts();
+     async waitForWebViewContextLoaded() {
+       // await mainWebPageWrapper().waitUntil(async function () {
+       //     return (await this.getContexts()).length > 1 &&
+       //         (await this.getContexts()).find(context => context.toLowerCase().includes('WEBVIEW')) !== 'undefined';
+       // }, {
+       //     timeout: 5000,
+       //     timeoutMsg: 'Webview context not loaded'
+       // })
 
-                return currentContexts.length > 1 &&
-                    currentContexts.find(context => context.toLowerCase().includes('WEBVIEW')) !== 'undefined';
-            }, {
-                // Wait a max of 45 seconds. Reason for this high amount is that loading
-                // a webview for iOS might take longer
-                timeout: 45000,
-                timeoutMsg: 'Webview context not loaded',
-                interval: 100,
-            },
-        );
+        console.log('available contexts ' + mob.getContexts())
+        console.log('current context is ' + mob.getContext())
     }
 
     _________NATIVE_CONTEXT_________ () {
@@ -163,10 +157,10 @@ export default class BasePage {
         return this;
     }
 
-    _________WEB_CONTEXT_________ () {
-        this.waitForWebViewContextLoaded()
+    async _________WEB_CONTEXT_________ () {
+        await this.waitForWebViewContextLoaded()
 
-        mob.switchContext(mob.getContexts()[1]);
+     //   await mob.switchContext(mob.getContexts()[1]);
         return this;
     }
 
@@ -446,19 +440,19 @@ export default class BasePage {
         return this;
     }
 
-    clickButton (text, isNative = false) {
-        this.waitLoaderToDisappear();
+    async clickButton (text, isNative = false) {
+        await this.waitLoaderToDisappear();
         if (isNative) {
-            this._________NATIVE_CONTEXT_________();
+            await this._________NATIVE_CONTEXT_________();
             if (S.isAndroid()) text.toUpperCase();
             elementByText(text).waitForEnabled();
             elementByText(text).click();
-            this._________WEB_CONTEXT_________();
+            await this._________WEB_CONTEXT_________();
         } else {
-            mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForDisplayed({timeout:5000});
-            mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForEnabled({timeout:5000});
-            mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForClickable({timeout:5000});
-            mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').click();
+           await  mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForDisplayed({timeout:5000});
+           await  mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForEnabled({timeout:5000});
+           await  mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').waitForClickable({timeout:5000});
+           await  mob.$('//*[contains(text(),"' + text + '")]/ancestor::button').click();
         }
         return this;
     }

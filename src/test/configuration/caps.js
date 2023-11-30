@@ -20,7 +20,7 @@ caps.RealDevice =
 }];
 
 caps.android = {
-    port: 4728,
+    port: 4727,
     path: '/',
     capabilities: {
         platformName: 'android',
@@ -88,7 +88,7 @@ caps.iOS =
            // 'appium:udid': 'auto',
            // 'appium:xcodeSigningId': 'iPhone Developer',
             'appium:automationName': 'XCUITest',
-            'appium:platformVersion': '14.4',
+            'appium:platformVersion': '15.4',
             // 'appium:wdaStartupRetries': '4',
             // 'appium:iosInstallPause': '8000',
             // 'appium:wdaStartupRetryInterval': '20000',

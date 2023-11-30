@@ -1,4 +1,3 @@
-import('@wdio/mocha-framework');
 const C = require('./constants');
 const accounts = require('./user-accounts');
 const helper = require('./helper');

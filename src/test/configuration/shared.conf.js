@@ -3,7 +3,7 @@ exports.config = {
     ],
     maxInstances: 1,
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     bail: 0,
     waitforTimeout: 120000,
     connectionRetryTimeout: 400000,

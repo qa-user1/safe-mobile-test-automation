@@ -2,8 +2,7 @@
   "name": "appium-wdio-framework",
   "version": "1.0.0",
   "description": "Test Automation Framework for SAFE mobile apps",
-  "type": "commonjs",
-  "main": "index.js",
+  "main": "./node_modules/.bin/wdio.js",
   "scripts": {
     "clean:report": "del-cli --force ./report/allure-results",
     "generate-report": "allure serve report/allure-results",
